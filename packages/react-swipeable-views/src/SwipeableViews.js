@@ -881,7 +881,7 @@ The custom height has a higher priority than the animateHeight property.
 So animateHeight is most likely having no effect at all.`,
     );
 
-    const slideStyle = Object.assign({}, styles.slide, slideStyleProp);
+    // const slideStyle = Object.assign({}, styles.slide, slideStyleProp);
 
     let transition;
     let WebkitTransition;
@@ -944,32 +944,22 @@ So animateHeight is most likely having no effect at all.`,
 We are expecting a valid React Element`,
             );
 
-            let ref;
-            let hidden = true;
+            // let ref;
+            // let hidden = true;
+            //
+            // if (indexChild === this.state.indexLatest) {
+            //   hidden = false;
+            //
+            //   if (animateHeight) {
+            //     ref = node => {
+            //       this.activeSlide = node;
+            //       this.updateHeight();
+            //     };
+            //     slideStyle.overflowY = 'hidden';
+            //   }
+            // }
 
-            if (indexChild === this.state.indexLatest) {
-              hidden = false;
-
-              if (animateHeight) {
-                ref = node => {
-                  this.activeSlide = node;
-                  this.updateHeight();
-                };
-                slideStyle.overflowY = 'hidden';
-              }
-            }
-
-            return (
-              <div
-                ref={ref}
-                style={slideStyle}
-                className={slideClassName}
-                aria-hidden={hidden}
-                data-swipeable="true"
-              >
-                {child}
-              </div>
-            );
+            return child;
           })}
         </div>
       </div>
